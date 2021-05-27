@@ -6,7 +6,7 @@ namespace App\Services\Repository;
 
 interface EventDateRepositoryInterface
 {
-    public function getByMonth(int $month);
+    public function getAll();
 
     public function createMany(array $data);
 

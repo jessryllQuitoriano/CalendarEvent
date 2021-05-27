@@ -29,12 +29,7 @@ class EventController extends Controller
 
     public function findAll(Request $request)
     {
-        $monthInteger = Carbon::now()->month;
-        if ($request->has('selected_month')) {
-            $monthInteger = (int)$request['selected_month'];
-        }
-
-        $dates = $this->eventDateRepository->getByMonth($monthInteger);
+        $dates = $this->eventDateRepository->getAll();
         $events = $this->calendarEventRepository->getByIds($dates->pluck('event_id')->toArray());
 
         $dateItems = $dates->map(function ($eventDate) use ($events) {

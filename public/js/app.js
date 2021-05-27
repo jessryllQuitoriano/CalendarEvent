@@ -51966,7 +51966,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { name: "event_name" },
+                  attrs: { name: "event_name", required: "" },
                   domProps: { value: _vm.cal_event.event_name },
                   on: {
                     input: function($event) {
@@ -51992,7 +51992,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "date", name: "start_from" },
+                  attrs: { type: "date", name: "start_from", required: "" },
                   domProps: { value: _vm.cal_event.start_from },
                   on: {
                     input: function($event) {
@@ -52018,7 +52018,7 @@ var render = function() {
                     }
                   ],
                   staticClass: "form-control",
-                  attrs: { type: "date", name: "end_from" },
+                  attrs: { type: "date", name: "end_from", required: "" },
                   domProps: { value: _vm.cal_event.end_from },
                   on: {
                     input: function($event) {

@@ -9,11 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class EventDateRepository implements EventDateRepositoryInterface
 {
-    public function getByMonth(int $month)
+    public function getAll()
     {
         return DB::table('event_dates')
             ->select(['id', 'event_id', 'date'])
-            ->whereMonth('date', $month)
             ->orderBy('date', 'desc')
             ->get();
     }

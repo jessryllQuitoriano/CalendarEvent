@@ -9,15 +9,15 @@
                     <form @submit.prevent="addCalendar">
                         <div class="form-group">
                             <label>Event Name</label>
-                            <input class="form-control" name="event_name" v-model="cal_event.event_name">
+                            <input class="form-control" name="event_name" v-model="cal_event.event_name" required>
                         </div>
                         <div class="form-group">
                             <label>Start From</label>
-                            <input type="date" name="start_from" class="form-control" v-model="cal_event.start_from">
+                            <input type="date" name="start_from" class="form-control" v-model="cal_event.start_from" required>
                         </div>
                         <div class="form-group">
                             <label>To</label>
-                            <input type="date" name="end_from" class="form-control" v-model="cal_event.end_from">
+                            <input type="date" name="end_from" class="form-control" v-model="cal_event.end_from" required>
                         </div>
                         <div class="form-check" v-for="selected in selection_days" :key="selected.id">
                             <input class="form-check-input" type="checkbox" :id="selected.id"
