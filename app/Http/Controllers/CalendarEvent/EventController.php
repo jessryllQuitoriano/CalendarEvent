@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Services\PeriodDateChecker;
 use App\Services\Repository\CalendarEventRepositoryInterface;
 use App\Services\Repository\EventDateRepositoryInterface;
-use Carbon\Carbon;
 use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
 
@@ -27,7 +26,7 @@ class EventController extends Controller
         $this->calendarEventRepository = $calendarEventRepository;
     }
 
-    public function findAll(Request $request)
+    public function findAll()
     {
         $dates = $this->eventDateRepository->getAll();
         $events = $this->calendarEventRepository->getByIds($dates->pluck('event_id')->toArray());
